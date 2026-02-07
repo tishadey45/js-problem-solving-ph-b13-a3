@@ -18,5 +18,5 @@ function validOtp(otp){
    return false;
   }
 }
-// let output = validOtp("ph-123456746753")
+// let output = validOtp("ph-123456746753") 
 // console.log(output);
