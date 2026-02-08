@@ -99,12 +99,11 @@ function finalScore(omr) {
 // problem-5
 
 function analyzeText(str) {
-  let words = str.split(" ");
-  console.log(words);
+  if (typeof str=="string" && str.length!== 0) {
+    let words = str.split(" ");
   let longWords= "";
   for (let word of words) {
     if (word.length > longWords.length) {
-      // console.log(value);
       longWords=word;
     }
   }
@@ -113,7 +112,10 @@ function analyzeText(str) {
     longwords:longWords,
     token:stringLength,
   }
+  } else {
+    return "Invalid";
+  }
 }
 
-const output = analyzeText("Keep coding keep shining" )
-console.log(output);
+// const output = analyzeText(12345  )
+// console.log(output);
