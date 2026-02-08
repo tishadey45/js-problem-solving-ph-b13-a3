@@ -1,35 +1,36 @@
 // problem-1
-// let result = num.toFixed(3);
+
 function newPrice(currentPrice, discount) {
-
-  //  let new = newPrice
-if(typeof currentPrice==="number"&& typeof discount ==="number"){
+  if (typeof currentPrice === "number" && typeof discount === "number") {
     if (discount < 0 && discount > 100) {
-    return "invalid";
+      return "Invalid";
+    } else {
+      let num = (currentPrice * discount) / 100;
+      let result = (currentPrice - num).toFixed(3);
+      return result;
+    }
   } else {
-    let num = (currentPrice * discount) / 100;
-    let result = (currentPrice - num).toFixed(3);
-    return result;
+    return "Invalid";
   }
-}else{
-return "invalid"
 }
 
-}
-
-let output = newPrice(500, "5");
-console.log(output);
+// let output = newPrice(500, "5");
+// console.log(output);
 
 // problem-2
 
 function validOtp(otp) {
-  if (otp.startsWith("ph") && otp.length === 8) {
-    return true;
+  if (typeof otp == "string") {
+    if (otp.startsWith("ph") && otp.length === 8) {
+      return true;
+    } else {
+      return false;
+    }
   } else {
-    return false;
+    return "Invalid";
   }
 }
-// let output = validOtp(12345678);
+// let output = validOtp([12345678]);
 // console.log(output);
 
 // problem-3
@@ -41,7 +42,7 @@ function finalScore(omr) {
     let result = Math.round(num);
     return result;
   } else {
-    return "invalid";
+    return "Invalid";
   }
 }
 
@@ -49,3 +50,70 @@ function finalScore(omr) {
 // console.log(output);
 
 // problem-4
+
+// function gonoVote(array) {
+
+//   let totalHa = 0;
+//   let totalNa = 0;
+//   // console.log("totalHa",totalHa);
+//   // console.log("totalNa",totalNa);
+
+//   for (const element of array) {
+//   //  totalHa+=element;
+//   if(element){
+
+//   }
+//   return totalHa
+  
+// }
+// }
+// let output = gonoVote(["ha", "ha", "ha", "na"]);
+// console.log(output);
+
+
+  //  console.log(totalHa);
+  
+  
+  
+  
+  
+  
+  
+  
+    //  console.log(element);
+
+  //  if(totalHa >totalNa){
+  //   return true;
+  //  }else if(totalHa == totalNa){
+  //   return "equal" 
+  //  }else{
+  //   return false;
+  //  }
+    // console.log(element);
+
+
+
+
+
+
+// problem-5
+
+function analyzeText(str) {
+  let words = str.split(" ");
+  console.log(words);
+  let longWords= "";
+  for (let word of words) {
+    if (word.length > longWords.length) {
+      // console.log(value);
+      longWords=word;
+    }
+  }
+   let stringLength= words.join("").length
+  return{
+    longwords:longWords,
+    token:stringLength,
+  }
+}
+
+const output = analyzeText("Keep coding keep shining" )
+console.log(output);
