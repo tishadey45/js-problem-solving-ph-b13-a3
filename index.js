@@ -51,67 +51,48 @@ function finalScore(omr) {
 
 // problem-4
 
-// function gonoVote(array) {
+function gonoVote(array) {
+  if (Array.isArray(array)) {
+    let totalHa = 0;
+    let totalNa = 0;
+    for (const element of array) {
+      if (element == "ha") {
+        totalHa = totalHa + 1;
+      } else if (element == "na") {
+        totalNa = totalNa + 1;
+      }
+    }
+    if (totalHa > totalNa) {
+      return true;
+    } else if (totalHa == totalNa) {
+      return "equal";
+    } else {
+      return false;
+    }
+  } else {
+    return "Invalid"
+  }
+}
 
-//   let totalHa = 0;
-//   let totalNa = 0;
-//   // console.log("totalHa",totalHa);
-//   // console.log("totalNa",totalNa);
-
-//   for (const element of array) {
-//   //  totalHa+=element;
-//   if(element){
-
-//   }
-//   return totalHa
-  
-// }
-// }
-// let output = gonoVote(["ha", "ha", "ha", "na"]);
+// let output = gonoVote(["ha", "na", "ha", "na"]);
 // console.log(output);
-
-
-  //  console.log(totalHa);
-  
-  
-  
-  
-  
-  
-  
-  
-    //  console.log(element);
-
-  //  if(totalHa >totalNa){
-  //   return true;
-  //  }else if(totalHa == totalNa){
-  //   return "equal" 
-  //  }else{
-  //   return false;
-  //  }
-    // console.log(element);
-
-
-
-
-
 
 // problem-5
 
 function analyzeText(str) {
-  if (typeof str=="string" && str.length!== 0) {
+  if (typeof str == "string" && str.length !== 0) {
     let words = str.split(" ");
-  let longWords= "";
-  for (let word of words) {
-    if (word.length > longWords.length) {
-      longWords=word;
+    let longWords = "";
+    for (let word of words) {
+      if (word.length > longWords.length) {
+        longWords = word;
+      }
     }
-  }
-   let stringLength= words.join("").length
-  return{
-    longwords:longWords,
-    token:stringLength,
-  }
+    let stringLength = words.join("").length;
+    return {
+      longwords: longWords,
+      token: stringLength,
+    };
   } else {
     return "Invalid";
   }
